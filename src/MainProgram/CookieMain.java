@@ -11,8 +11,9 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+
+//
+
 public class CookieMain extends Application {
     public static void main(String[] args) {
         launch(CookieMain.class);
