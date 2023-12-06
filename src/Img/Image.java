@@ -2,11 +2,9 @@ package Img;
 
 import javafx.scene.image.ImageView;
 
-<<<<<<< HEAD
-=======
+
 // hello
 
->>>>>>> 655f66d (Initial commit)
 public class Image {
     private String img;
     private javafx.scene.image.Image image;
