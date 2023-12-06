@@ -6,9 +6,9 @@ import Buildings.Grandma;
 
 public class CookieCount {
     int cookieCounter;
-    Fingers finger = new Fingers(15);
-    Grandma grandma = new Grandma(100);
-    Farms farms = new Farms(1100);
+    private Fingers finger = new Fingers(15);
+    private Grandma grandma = new Grandma(100);
+    private Farms farms = new Farms(1100);
     private int productionCache = 0;
 
     public CookieCount(int cookieCounter) {
@@ -52,5 +52,15 @@ public class CookieCount {
         this.productionCache = 0;
     }
 
+    public Fingers getFinger() {
+        return finger;
+    }
 
+    public Grandma getGrandma() {
+        return grandma;
+    }
+
+    public Farms getFarms() {
+        return farms;
+    }
 }
