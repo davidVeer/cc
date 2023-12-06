@@ -10,10 +10,10 @@ public class CookieCount {
     private Fingers finger = new Fingers(15);
     private Grandma grandma = new Grandma(100);
     private Farms farms = new Farms(1100);
-    private int productionCache = 0;
+    private double productionCache = 0;
 
     public CookieCount(int cookieCounter) {
-        this.cookieCounter = cookieCounter;
+        this.cookieCounter = 52;
         finger.setCookieCount(this);
         grandma.setCookieCount(this);
         farms.setCookieCount(this);
@@ -40,12 +40,20 @@ public class CookieCount {
     }
 
 
-    public void updateProduction()
+    public String updateProduction()
     {
         this.productionCache += finger.getHowMany() * (0.2 * 0.01666666); //clickers
+
+        if (this.productionCache >= 1) {
+            this.cookieCounter += (int) this.productionCache;
+            this.productionCache -= (int) this.productionCache;
+        }
+
+
+        return String.valueOf(this.cookieCounter);
     }
 
-    public int getProductionCache() {
+    public double getProductionCache() {
         return productionCache;
     }
     public void addProductionCache(){

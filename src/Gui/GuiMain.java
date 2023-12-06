@@ -12,9 +12,15 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class GuiMain extends Application {
+
     @Override
     public void start(Stage primaryStage) {
+
+
         ImageFunctions cookieImage = new ImageFunctions("Images/cookie.jpeg", 400);
 
         ImageFunctions fingerImage = new ImageFunctions("Images/finger2.png", 50);
@@ -28,7 +34,8 @@ public class GuiMain extends Application {
 
         CookieCount cookieCount = new CookieCount(0);
 
-        Label label = new Label("cookie count");
+
+        Label label = new Label(String.valueOf(cookieCount.getCookieCounter()));
         label.setMinSize(100, 100);
         label.setFont(Font.font(100));
 
@@ -52,26 +59,43 @@ public class GuiMain extends Application {
         farm.setPrefSize(300,50);
         farm.setGraphic(farmImage.getView());
 
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+
+                System.out.println(cookieCount.getProductionCache());
+                System.out.println(cookieCount.getCookieCounter());
+                cookieCount.updateProduction();
+
+
+            }
+        },0, 17);
 
         cookieButton.setOnAction(event -> {
             label.setText(cookieCount.add());
         });
         finger.setOnAction(event -> {
-            label.setText(cookieCount.getFinger().bought());
+            cookieCount.getFinger().bought();
+            label.setText(String.valueOf(cookieCount.getCookieCounter()));
             finger.setText("Buildings.Fingers Price: " + cookieCount.getFinger().getPrice() + "\nAmount: " +  cookieCount.getFinger().getHowMany());
 
         });
 
         grandma.setOnAction(event -> {
-            label.setText(cookieCount.getGrandma().bought());
+            cookieCount.getGrandma().bought();
+            label.setText(String.valueOf(cookieCount.getCookieCounter()));
             grandma.setText("Buildings Grandma Price: " + cookieCount.getGrandma().getPrice() + "\nAmount: " +  cookieCount.getGrandma().getHowMany());
         });
 
         farm.setOnAction(event -> {
-            label.setText(cookieCount.getFarms().bought());
+            cookieCount.getFarms().bought();
+            label.setText(String.valueOf(cookieCount.getCookieCounter()));
             farm.setText("Buildings Grandma Price: " + cookieCount.getFarms().getPrice() + "\nAmount: " +  cookieCount.getFarms().getHowMany());
 
         });
+
+
 
 
         VBox vBox = new VBox();
