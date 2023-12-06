@@ -2,13 +2,16 @@ package Buildings;
 
 import MainProgram.CookieCount;
 
-public class Farms {
+public class Farms implements Buildings{
+
+    private String name;
     private int price;
     private int howMany;
 
     private int basePrice;
     private CookieCount cookieCount;
     public Farms(int price) {
+        this.name = "farm";
         this.price = price;
         this.howMany = 0;
         this.basePrice = price;
@@ -24,6 +27,11 @@ public class Farms {
 
     public int getPrice() {
         return price;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     public int getHowMany() {

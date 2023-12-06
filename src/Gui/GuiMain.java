@@ -36,6 +36,9 @@ public class GuiMain extends Application {
         cookieButton.setPrefSize(400,400);
         cookieButton.setGraphic(cookieImage.getView());
 
+        GuiButton cookieButton = new GuiButton(400,400)
+
+
         javafx.scene.control.Button finger = new javafx.scene.control.Button("Buildings Fingers Price: " + cookieCount.getFinger().getPrice() + "\nAmount: " +  cookieCount.getFinger().getHowMany());
         finger.setPrefSize(300,50);
         finger.setGraphic(fingerImage.getView());
