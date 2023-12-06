@@ -2,7 +2,7 @@ package Buildings;
 
 import MainProgram.CookieCount;
 
-public class Grandma {
+public class Grandma implements Buildings {
     private int price;
     private int howMany;
 
@@ -20,6 +20,11 @@ public class Grandma {
             this.price = (int) (this.basePrice *Math.pow(1.15, this.howMany));
         }
         return String.valueOf(cookieCount.getCookieCounter());
+    }
+
+    @Override
+    public String getName() {
+        return null;
     }
 
     public int getPrice() {

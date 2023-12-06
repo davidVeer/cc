@@ -1,5 +1,6 @@
 package MainProgram;
 
+import Buildings.Buildings;
 import Buildings.Farms;
 import Buildings.Fingers;
 import Buildings.Grandma;
@@ -52,15 +53,15 @@ public class CookieCount {
         this.productionCache = 0;
     }
 
-    public Fingers getFinger() {
+    public Buildings getFinger() {
         return finger;
     }
 
-    public Grandma getGrandma() {
+    public Buildings getGrandma() {
         return grandma;
     }
 
-    public Farms getFarms() {
+    public Buildings getFarms() {
         return farms;
     }
 }
