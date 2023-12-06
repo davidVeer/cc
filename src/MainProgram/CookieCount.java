@@ -12,7 +12,7 @@ public class CookieCount {
     private int productionCache = 0;
 
     public CookieCount(int cookieCounter) {
-        this.cookieCounter = 200000;
+        this.cookieCounter = cookieCounter;
         finger.setCookieCount(this);
         grandma.setCookieCount(this);
         farms.setCookieCount(this);
