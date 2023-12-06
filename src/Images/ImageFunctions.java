@@ -1,18 +1,18 @@
-package Img;
+package Images;
 
 import javafx.scene.image.ImageView;
 
 
 // hello siem
 
-public class Image {
+public class ImageFunctions {
     private String img;
     private javafx.scene.image.Image image;
     private ImageView view;
     private int height;
 
 
-    public Image(String img, int height) {
+    public ImageFunctions(String img, int height) {
         this.img = img;
         this.height = height;
 

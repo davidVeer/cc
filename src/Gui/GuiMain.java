@@ -1,6 +1,6 @@
 package Gui;
 
-import Img.Image;
+import Images.*;
 import MainProgram.CookieCount;
 import MainProgram.CookieMain;
 import javafx.application.Application;
@@ -15,13 +15,13 @@ import javafx.stage.Stage;
 public class GuiMain extends Application {
     @Override
     public void start(Stage primaryStage) {
-        Img.Image cookieImage = new Img.Image("img/cookie.jpeg", 400);
+        ImageFunctions cookieImage = new ImageFunctions("Images/cookie.jpeg", 400);
 
-        Img.Image fingerImage = new Img.Image("img/finger2.png", 50);
+        ImageFunctions fingerImage = new ImageFunctions("Images/finger2.png", 50);
 
-        Img.Image grandmaImage = new Img.Image("img/grandma.jpg", 50);
+        ImageFunctions grandmaImage = new ImageFunctions("Images/grandma.jpg", 50);
 
-        Img.Image farmImage = new Image("img/farm.png", 50);
+        ImageFunctions farmImage = new ImageFunctions("Images/farm.png", 50);
 
 
 
@@ -87,7 +87,7 @@ public class GuiMain extends Application {
 
         Scene scene = new Scene(borderPane);
         primaryStage.setTitle("coomknie klicer");
-        primaryStage.getIcons().add(new javafx.scene.image.Image("img/cookie.jpeg"));
+        primaryStage.getIcons().add(new javafx.scene.image.Image("Images/cookie.jpeg"));
         primaryStage.setScene(scene);
         primaryStage.show();
 
